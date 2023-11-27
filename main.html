@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>7 Days to Die item info extractor</title>
+    <script type="text/javascript" src="jstools.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <table>
+        <tr class="hidden">
+            <td>blocks.xml</td>
+            <td><input type="file" accept=".xml" id="blocksxmlinput"></td>
+        </tr>
+        <tr>
+            <td>items.xml</td>
+            <td><input type="file" accept=".xml" id="itemsxmlinput"></td>
+        </tr>
+        <tr>
+            <td>materials.xml</td>
+            <td><input type="file" accept=".xml" id="materialsxmlinput"></td>
+        </tr>
+        <tr>
+            <td>localization.txt</td>
+            <td><input type="file" accept=".txt" id="LocalizationInput"></td>
+        </tr>
+    </table>
+    <button id="go" onclick="run()">go</button><br>
+    <table id="results">
+        <thead>
+            <tr>
+                <td>Item name</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="name_input" oninput="render(this.value, document.getElementById('id_input').value)"></td>
+                <td><input type="text" id="id_input" oninput="render(document.getElementById('name_input').value, this.value)"></td>
+            </tr>
+        </thead>
+        <tbody id="output">
+        </tbody>
+    </table>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
