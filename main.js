@@ -61,8 +61,8 @@ function extend(defaults, data) {
 }
 let langArr = ["english", "german", "spanish", "french", "italian", "japanese", "koreana", "polish", "brazilian", "russian", "turkish", "schinese", "tchinese"];
 function run() {
-    let keys = local.shift();
-    local.forEach(e => {
+    let keys = local[0];
+    local.slice(1).forEach(e => {
         langArr.forEach(l => {
             if (!translate[e[0]]) {
                 translate[e[0]] = {};
@@ -73,7 +73,7 @@ function run() {
 
     [
         [items, "item"],
-        [blocks, "block"],
+        // [blocks, "block"],
         [materials, "material", "id"]
     ].forEach(e => {
         parse(...e);
