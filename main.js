@@ -73,7 +73,7 @@ function run() {
 
     [
         [items, "item"],
-        // [blocks, "block"],
+        [blocks, "block"],
         [materials, "material", "id"]
     ].forEach(e => {
         parse(...e);
@@ -113,9 +113,7 @@ function matches(str, matcher) {
 }
 
 function render(name, id) {
-    while (document.getElementById("output").firstChild) {
-        document.getElementById("output").firstChild.remove();
-    }
+    document.getElementById("output").innerHTML = "";
 
     itemArr.filter(function (item) {
         return matches(item.english.toLowerCase(), name.toLowerCase()) && matches(item.name.toLowerCase(), id.toLowerCase());
