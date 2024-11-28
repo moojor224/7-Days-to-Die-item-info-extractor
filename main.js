@@ -3,7 +3,8 @@ let itemArr = [],
 let local = [];
 let items = "",
     blocks = "",
-    materials = "";
+    materials = "",
+    item_modifiers;
 let translate = [];
 
 document.getElementById('LocalizationInput').addEventListener('change', function () {
@@ -20,6 +21,15 @@ document.getElementById('itemsxmlinput').addEventListener('change', function () 
     const reader = new FileReader();
     reader.onload = () => {
         items = reader.result;
+        // console.log(txt);
+        run();
+    }
+    reader.readAsText(this.files[0]);
+});
+document.getElementById('itemmodifierssxmlinput').addEventListener('change', function () {
+    const reader = new FileReader();
+    reader.onload = () => {
+        item_modifiers = reader.result;
         // console.log(txt);
         run();
     }
@@ -74,7 +84,8 @@ function run() {
     [
         [items, "item"],
         [blocks, "block"],
-        [materials, "material", "id"]
+        [materials, "material", "id"],
+        [item_modifiers, "item_modifier"],
     ].forEach(e => {
         parse(...e);
     });
