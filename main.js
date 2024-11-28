@@ -72,6 +72,7 @@ function extend(defaults, data) {
 let langArr = ["english", "german", "spanish", "french", "italian", "japanese", "koreana", "polish", "brazilian", "russian", "turkish", "schinese", "tchinese"];
 function run() {
     let keys = local[0];
+    itemArr = [];
     local.slice(1).forEach(e => {
         langArr.forEach(l => {
             if (!translate[e[0]]) {
